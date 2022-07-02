@@ -16,6 +16,7 @@ import {
   ScoreCircle,
   ButtonLink,
   SubTitle,
+  Disclaimer,
 } from './components';
 
 type CasinoBrandCardProps = ProviderCardData;
@@ -31,6 +32,7 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
     providerVisitLink,
     minDeposit,
     minDepositLabel,
+    providerLegalDisclaimer,
   } = props;
   const { offerTitle, offerSubText } = providerBonus;
   const [offerPart, offerSite] = offerSubText.split(', ');
@@ -42,7 +44,7 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
         <ContentItem>
           <ProviderLogo {...providerLogo.logo} />
         </ContentItem>
-        <ContentItem>
+        <ContentItem shouldGrow>
           <h3>{offerTitle}</h3>
           <OfferSubText>
             <Text color="link">{offerTerms} </Text>
@@ -54,14 +56,14 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
           {slotsImages.slice(0, 3).map(({ image, text }) => (
             <Slots>
               <SlotsImage {...image} />
-              <SubTitle>{text}</SubTitle>
+              <SubTitle withUnderline>{text}</SubTitle>
             </Slots>
           ))}
         </SlotsContentItem>
         <ContentItem>
           <RatingStars rating={providerRating.value}/>
           <div>Votes ({providerRating.votes})</div>
-          <SubTitle>
+          <SubTitle withUnderline>
             <a href={providerRating.page.path}>{providerRating.linkText}</a>
           </SubTitle>
         </ContentItem>
@@ -77,6 +79,7 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
           </SubTitle>
         </ContentItem>
       </Content>
+      <Disclaimer>{providerLegalDisclaimer}</Disclaimer>
     </Card>
   );
 };

@@ -7,12 +7,12 @@ export interface TextProps {
 }
 
 const colorStyle = {
-  danger: css`color: red;`,
-  link: css`color: blue;`,
+  danger: css`color: ${({ theme }) => theme.colors.textDanger};`,
+  link: css`color: ${({ theme }) => theme.colors.textLink};`,
 }
 
 const Text = styled.span<TextProps>`
-  ${props => colorStyle[props.color]} 
+  ${({ color }) => colorStyle[color]} 
 `;
 
 export default Text;

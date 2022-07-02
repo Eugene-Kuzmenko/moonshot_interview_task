@@ -1,9 +1,6 @@
 import React, { memo } from 'react';
 import { Rate as AntdRate, RateProps as AntdRateProps } from 'antd';
 
-import styles from './RatingStars.module.css';
-import clsx from 'clsx';
-
 interface RatingStars extends Omit<AntdRateProps, 'count'> {
   rating: number,
 }
@@ -17,7 +14,7 @@ const RatingStars = (props: RatingStars) => {
   return (
     <AntdRate
       {...rateProps}
-      className={clsx(styles.root, props.className)}
+      className={className}
       count={toStarCount(rating)}
     />
   );

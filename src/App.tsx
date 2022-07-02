@@ -1,20 +1,24 @@
 import React from 'react';
 import { ProviderCard } from 'components';
+import { ThemeProvider } from 'styled-components';
 
-import providers from './assets/providers.json';
+import providers from 'assets/providers.json';
+import { THEME } from 'constants/theme';
 
 import 'antd/dist/antd.css';
 
 function App() {
   return (
-    <div>
-      {providers.map((provider) => (
-        <ProviderCard
-          key={provider.providerName}
-          {...provider}
-        />
-      ))}
-    </div>
+    <ThemeProvider theme={THEME}>
+      <div>
+        {providers.map((provider) => (
+          <ProviderCard
+            key={provider.providerName}
+            {...provider}
+          />
+        ))}
+      </div>
+    </ThemeProvider>
   );
 }
 

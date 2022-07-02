@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Progress, ProgressProps } from 'antd';
-import { STROKE_1_COLOR, RATING_COLOR } from '../../../../constants/colors';
+import { useTheme } from 'styled-components';
 
 type OmittedProgressProps = 'percent' | 'format' | 'type';
 
@@ -20,12 +20,13 @@ const ScoreCircle = (props: RatingCircleProps) => {
     ...progressProps
   } = props;
 
+  const theme = useTheme()
 
   return (
     <Progress
       type="circle"
-      strokeColor={RATING_COLOR}
-      trailColor={STROKE_1_COLOR}
+      strokeColor={theme.colors.rating}
+      trailColor={theme.colors.stroke1}
       strokeLinecap="butt"
       strokeWidth={3}
       width={58}
