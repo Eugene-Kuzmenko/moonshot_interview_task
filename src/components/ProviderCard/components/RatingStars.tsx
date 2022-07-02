@@ -25,6 +25,7 @@ export default styled(memo(RatingStars))`
   color: ${({ theme }) => theme.colors.rating};
   white-space: nowrap;
   margin-bottom: 4px;
+  font-size: 16px;
   
   .ant-rate-star {
     margin-right: 2px;

@@ -21,6 +21,11 @@ const ContentItem = styled.div<ContentItemProps>`
   flex-direction: column;
   
   padding: 0 16px;
+  
+  ${onMaxScreenWidth('lg')} {
+    padding: 0 12px;
+  }
+  
   color: ${({ theme }) => theme.colors.text3};
   
   ${({ shouldGrow }) => shouldGrow && css`
