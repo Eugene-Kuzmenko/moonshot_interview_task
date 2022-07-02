@@ -5,11 +5,12 @@ declare module 'styled-components' {
     colors: {
       rating: string,
       stroke1: string,
+      stroke2: string,
       text3: string,
       textLink: string,
       textDanger: string,
       textBlack: string,
-      bgWhite: string
+      bgWhite: string,
     }
   }
 }
