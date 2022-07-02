@@ -8,6 +8,7 @@ const Card = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.stroke2};
   font-weight: 400;
   font-size: 12px;
+  font-family: 'Roboto', sans-serif;
   line-height: 14px;
   
   &:hover {

@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { Progress, ProgressProps } from 'antd';
-import { useTheme } from 'styled-components';
+import styled, { useTheme } from 'styled-components';
 
 type OmittedProgressProps = 'percent' | 'format' | 'type';
 
@@ -28,7 +28,7 @@ const ScoreCircle = (props: RatingCircleProps) => {
       strokeColor={theme.colors.rating}
       trailColor={theme.colors.stroke1}
       strokeLinecap="butt"
-      strokeWidth={3}
+      strokeWidth={4}
       width={58}
       percent={toPercent(rating)}
       format={formatRating}
@@ -37,4 +37,10 @@ const ScoreCircle = (props: RatingCircleProps) => {
   );
 };
 
-export default memo(ScoreCircle);
+export default styled(memo(ScoreCircle))`
+  .ant-progress-text {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 400;
+  }
+`;

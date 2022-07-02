@@ -16,7 +16,8 @@ import {
   ScoreCircle,
   ButtonLink,
   SubTitle,
-  Disclaimer, Title,
+  Disclaimer,
+  Title,
 } from './components';
 
 type CasinoBrandCardProps = ProviderCardData;
