@@ -16,7 +16,7 @@ import {
   ScoreCircle,
   ButtonLink,
   SubTitle,
-  Disclaimer,
+  Disclaimer, Title,
 } from './components';
 
 type CasinoBrandCardProps = ProviderCardData;
@@ -45,7 +45,7 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
           <ProviderLogo {...providerLogo.logo} />
         </ContentItem>
         <ContentItem shouldGrow>
-          <h3>{offerTitle}</h3>
+          <Title>{offerTitle}</Title>
           <OfferSubText>
             <Text color="link">{offerTerms} </Text>
             <Text color="danger">{offerAgeRestriction}</Text>{', '}
@@ -60,14 +60,14 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
             </Slots>
           ))}
         </SlotsContentItem>
-        <ContentItem>
+        <ContentItem align='center'>
           <RatingStars rating={providerRating.value}/>
           <div>Votes ({providerRating.votes})</div>
           <SubTitle withUnderline>
             <a href={providerRating.page.path}>{providerRating.linkText}</a>
           </SubTitle>
         </ContentItem>
-        <ContentItem>
+        <ContentItem hideOnSmall>
           <ScoreCircle rating={providerScore.score}/>
         </ContentItem>
         <ContentItem>
