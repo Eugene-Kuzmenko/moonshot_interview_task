@@ -11,14 +11,22 @@ import {
   Text,
   SlotsContentItem,
   SlotsImage,
-  Slots
+  Slots,
+  RatingStars,
+  ScoreCircle,
 } from './components';
-
 
 type CasinoBrandCardProps = ProviderCardData;
 
+
 const ProviderCard = (props: CasinoBrandCardProps) => {
-  const { providerLogo, providerBonus, slotsImages } = props;
+  const {
+    providerLogo,
+    providerBonus,
+    slotsImages,
+    providerRating,
+    providerScore
+  } = props;
   const { offerTitle, offerSubText } = providerBonus;
   const [offerPart, offerSite] = offerSubText.split(', ');
   const [offerTerms, offerAgeRestriction] = offerPart.split('. ')
@@ -45,6 +53,16 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
             </Slots>
           ))}
         </SlotsContentItem>
+        <ContentItem>
+          <RatingStars rating={providerRating.value}/>
+          <div>Votes ({providerRating.votes})</div>
+          <div>
+            <a href={providerRating.page.path}>{providerRating.linkText}</a>
+          </div>
+        </ContentItem>
+        <ContentItem>
+          <ScoreCircle rating={providerScore.score}/>
+        </ContentItem>
       </Content>
     </Card>
   );

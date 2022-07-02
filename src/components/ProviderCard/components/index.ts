@@ -7,3 +7,5 @@ export { default as Text } from './Text';
 export { default as SlotsContentItem } from './SlotsContentItem'
 export { default as Slots } from './Slots';
 export { default as SlotsImage } from './SlotsImage';
+export { default as RatingStars } from './RatingStars';
+export { default as ScoreCircle } from './ScoreCircle';
