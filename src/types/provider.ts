@@ -57,5 +57,5 @@ export interface ProviderCardData {
   providerScore: ProviderScore,
   providerVisitLink: LinkData,
   providerLegalDisclaimer: string,
-  slotsImages: ImageWithTextData,
+  slotsImages: ImageWithTextData[],
 }
