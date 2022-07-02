@@ -7,7 +7,7 @@ const Disclaimer = styled.footer`
   margin: 16px 96px 0;
   color: ${({ theme }) => theme.colors.stroke1};
   
-  ${onMaxScreenWidth('md')} {
+  ${onMaxScreenWidth('lg')} {
     ${marginVertical('40px')}
   }
 `;

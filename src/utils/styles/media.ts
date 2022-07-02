@@ -6,5 +6,5 @@ export function onMinScreenWidth(breakpoint: BreakpointName) {
 }
 
 export function onMaxScreenWidth(breakpoint: BreakpointName) {
-  return `@media screen and (min-width: ${BREAKPOINTS[breakpoint]})`
+  return `@media screen and (max-width: ${BREAKPOINTS[breakpoint]})`
 }

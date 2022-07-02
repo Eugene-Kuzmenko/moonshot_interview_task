@@ -67,7 +67,7 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
             <a href={providerRating.page.path}>{providerRating.linkText}</a>
           </SubTitle>
         </ContentItem>
-        <ContentItem hideOnSmall>
+        <ContentItem hideOnMedium>
           <ScoreCircle rating={providerScore.score}/>
         </ContentItem>
         <ContentItem>
