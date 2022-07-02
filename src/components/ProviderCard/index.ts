@@ -1,1 +1,1 @@
-export { default } from './CasinoBrandCard';
+export { default } from './ProviderCard';

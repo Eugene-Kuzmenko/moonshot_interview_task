@@ -5,12 +5,12 @@ export interface ImageData {
 }
 
 export interface LinkData {
-  ling: string,
+  link: string,
   text: string,
 }
 
 export interface ProviderLogo {
-  hideNumber: true,
+  hideNumber: boolean,
   logo: ImageData,
   logoMobile: ImageData,
   useAltLogoForMobile: boolean,
@@ -19,7 +19,7 @@ export interface ProviderLogo {
 export interface ProviderRatingPageData {
   path: string,
   title: string,
-  id: 0,
+  id: number,
 }
 
 export interface ProviderRating {

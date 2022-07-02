@@ -1,5 +1,4 @@
 import React from 'react';
-import 'App.css';
 import { ProviderCard } from 'components';
 
 import providers from './assets/providers.json';
