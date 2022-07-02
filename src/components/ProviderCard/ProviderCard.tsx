@@ -54,7 +54,7 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
         </ContentItem>
         <SlotsContentItem>
           {slotsImages.slice(0, 3).map(({ image, text }) => (
-            <Slots>
+            <Slots key={text}>
               <SlotsImage {...image} />
               <SubTitle withUnderline>{text}</SubTitle>
             </Slots>

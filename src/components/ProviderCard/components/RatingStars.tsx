@@ -1,7 +1,8 @@
 import React, { memo } from 'react';
 import { Rate as AntdRate, RateProps as AntdRateProps } from 'antd';
+import styled from 'styled-components';
 
-interface RatingStars extends Omit<AntdRateProps, 'count'> {
+interface RatingStars extends Omit<AntdRateProps, 'value'> {
   rating: number,
 }
 
@@ -9,15 +10,21 @@ const toStarCount = (rating: number): number => rating / 2;
 
 
 const RatingStars = (props: RatingStars) => {
-  const { rating, className, ...rateProps } = props;
+  const { rating, ...rateProps } = props;
 
   return (
     <AntdRate
+      allowHalf
       {...rateProps}
-      className={className}
-      count={toStarCount(rating)}
+      value={toStarCount(rating)}
     />
   );
 };
 
-export default memo(RatingStars);
+export default styled(memo(RatingStars))`
+  color: ${({ theme }) => theme.colors.rating};
+  
+  .ant-rate-star {
+    margin-right: 2px;
+  }
+`;
