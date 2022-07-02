@@ -3,9 +3,9 @@ import styled, { css } from 'styled-components';
 import { onMaxScreenWidth } from 'utils/styles';
 
 const ALIGN_STYLES = {
-  'top': css`align-items: flex-start;`,
-  'bottom': css`align-items: flex-end;`,
-  'center': css`align-items: center;`,
+  'top': css`justify-content: flex-start;`,
+  'bottom': css`justify-content: flex-end;`,
+  'center': css`justify-content: center;`,
 } as const;
 
 type AlignVariant = keyof (typeof ALIGN_STYLES);
@@ -18,7 +18,6 @@ interface ContentItemProps {
 
 const ContentItem = styled.div<ContentItemProps>`
   display: flex;
-  justify-content: center;
   flex-direction: column;
   
   padding: 0 16px;

@@ -60,17 +60,17 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
             </Slots>
           ))}
         </SlotsContentItem>
-        <ContentItem align='center'>
+        <ContentItem align="center">
           <RatingStars rating={providerRating.value}/>
           <div>Votes ({providerRating.votes})</div>
           <SubTitle withUnderline>
             <a href={providerRating.page.path}>{providerRating.linkText}</a>
           </SubTitle>
         </ContentItem>
-        <ContentItem hideOnMedium>
+        <ContentItem hideOnMedium align="center">
           <ScoreCircle rating={providerScore.score}/>
         </ContentItem>
-        <ContentItem>
+        <ContentItem align="center">
           <ButtonLink href={providerVisitLink.link}>
             {providerVisitLink.text}
           </ButtonLink>

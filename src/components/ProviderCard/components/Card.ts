@@ -6,7 +6,7 @@ const Card = styled.div`
   background-color: ${({ theme }) => theme.colors.bgWhite};
   border-radius: 12px;
   border: 1px solid ${({ theme }) => theme.colors.stroke2};
-  font-weight: normal;
+  font-weight: 400;
   font-size: 12px;
   line-height: 14px;
   
