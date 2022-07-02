@@ -14,6 +14,8 @@ import {
   Slots,
   RatingStars,
   ScoreCircle,
+  ButtonLink,
+  SubTitle,
 } from './components';
 
 type CasinoBrandCardProps = ProviderCardData;
@@ -25,7 +27,10 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
     providerBonus,
     slotsImages,
     providerRating,
-    providerScore
+    providerScore,
+    providerVisitLink,
+    minDeposit,
+    minDepositLabel,
   } = props;
   const { offerTitle, offerSubText } = providerBonus;
   const [offerPart, offerSite] = offerSubText.split(', ');
@@ -49,19 +54,27 @@ const ProviderCard = (props: CasinoBrandCardProps) => {
           {slotsImages.slice(0, 3).map(({ image, text }) => (
             <Slots>
               <SlotsImage {...image} />
-              <div>{text}</div>
+              <SubTitle>{text}</SubTitle>
             </Slots>
           ))}
         </SlotsContentItem>
         <ContentItem>
           <RatingStars rating={providerRating.value}/>
           <div>Votes ({providerRating.votes})</div>
-          <div>
+          <SubTitle>
             <a href={providerRating.page.path}>{providerRating.linkText}</a>
-          </div>
+          </SubTitle>
         </ContentItem>
         <ContentItem>
           <ScoreCircle rating={providerScore.score}/>
+        </ContentItem>
+        <ContentItem>
+          <ButtonLink href={providerVisitLink.link}>
+            {providerVisitLink.text}
+          </ButtonLink>
+          <SubTitle>
+            {minDepositLabel} - {minDeposit}
+          </SubTitle>
         </ContentItem>
       </Content>
     </Card>

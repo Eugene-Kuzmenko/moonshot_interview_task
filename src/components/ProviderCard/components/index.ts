@@ -9,3 +9,5 @@ export { default as Slots } from './Slots';
 export { default as SlotsImage } from './SlotsImage';
 export { default as RatingStars } from './RatingStars';
 export { default as ScoreCircle } from './ScoreCircle';
+export { default as ButtonLink } from './ButtonLink';
+export { default as SubTitle } from './SubTitle';
